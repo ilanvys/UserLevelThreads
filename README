@@ -1,0 +1,55 @@
+yaelpalti,ilan.vys
+Yael Palti (318190485), Ilan Vysokovsky (207375528)
+EX: 1
+
+FILES:
+uthreads.cpp -- implementation of the libuthreads library functions
+Makefile
+README
+
+REMARKS:
+
+ANSWERS:
+Assignment 2:
+***Theoretical Questions***
+1)
+(a) sigsetjmp - this function saves stack environment and signal mask (optional) into an igjmp_buf argument.
+The function returns 0 when it invokes or value val, specified on by the function siglongjmp, if it called by it.
+
+(b) siglongjmp - this function restores stack environment saved by sigsetjmp, there is no return value.
+
+2)
+An example of the use of user-level threads could be an interactive game.
+Using user-level threads will enable the game  rendering graphics, audio processing, or loading game assets,
+while keeping the main 	thread responsive to user input. The choose of user-level threads will keep the game
+running fast without unnecessary overhead which is a great advantage in a game that needs to be responsive and
+without delays.
+
+3)
+One of the disadvantages of frequent process switching is that it can cause significant overhead time,
+resulting in a considerable amount of time being wasted when switching tabs frequently.
+Another drawback of using different processes for each tab is that applications requiring communication
+between tabs need to use the operating system, resulting in additional overhead time.
+advantage of using different processes is the ability to use different CPU resources simultaneously.
+Each process can be assigned to a separate CPU core, allowing multiple processes to execute simultaneously
+and making efficient use of available hardware resources. another advantage is the separation in memory
+and stack environment as each process runs in its own memory space and has limited access to resources
+outside of its own environment. This isolation can reduce errors and security problems.
+
+4)
+When the 'Enter' key is pressed, after typing `kill pid` in the shell,
+the keyboard sends a hardware interrupt to the OS and triggers the shell to execute the "kill" command.
+When the shell interprets the command it sends a signal to the OS.
+The OS then sends the signal to the Shotwell process, requesting it to terminate using the SIGTERM.
+Then Shotwell process should handle the signal by terminating gracefully.
+
+5)
+Real time refers to the actual time elapsed in the physical world, measured in seconds, minutes, hours, and so on.
+It is the time that we experience in our daily lives and is generally determined by an external clock or
+time-keeping device. An example of real time is the time displayed on a clock or watch,
+which reflects the actual time in the physical world.
+
+Virtual time refers to a time measurement that is relative to some other event, rather than an absolute time measurement.
+An example of virtual time is counting the times a user-level thread is executed.
+The virtual time used by the scheduling algorithm is relative to the start of the program or the start of a
+particular thread's execution, rather than the actual time in the physical world.
